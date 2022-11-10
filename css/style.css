@@ -1,3 +1,7 @@
+body {
+  background-color: #000000;
+}
+
 .page-header {
   background: black;
   color: #ffffff;
@@ -15,6 +19,7 @@
 
 .page-header__nav a {
   color: #ffffff;
+
   padding: 0 10px;
   text-decoration: none;
 }
@@ -133,8 +138,8 @@
   -o-transition: transform 0.4s ease-in-out 1.5s, opacity ease-in-out 1.5s;
   -webkit-transform: translate3d(0, 100px, 0);
   -webkit-transition: transform 0.4s ease-in-out 1.5s, opacity ease-in-out 1.5s;
-  background: #ffffff;
-  color: #000000;
+  background: white;
+  color: black;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
@@ -175,6 +180,9 @@
   transition: transform 0.4s ease-in-out 2s, opacity 0.4s ease-in-out 2s;
   transition: transform 0.4s ease-in-out 2s, opacity 0.4s ease-in-out 2s,
     -webkit-transform 0.4s ease-in-out 2s;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.55);
+  text-align: justify;
 }
 
 .jumbo-slider__slide--active .jumbo-slider__slide-number,
@@ -270,4 +278,15 @@
 .jumbo-slider__slide--active .jumbo-slider__time {
   background: #03fc7f;
   width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .jumbo-slider__slide-number {
+    font-size: 10rem;
+  }
+
+  .jumbo-slider__title {
+    background: black;
+    color: white;
+  }
 }
