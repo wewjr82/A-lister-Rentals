@@ -28,6 +28,129 @@ body {
   text-decoration: none;
 }
 
+#cssmenu {
+  width: auto;
+  display: block;
+  text-align: center;
+  font-family: Cormorant;
+  line-height: 1.2;
+}
+#cssmenu ul {
+  width: auto;
+  display: block;
+  font-size: 0;
+  text-align: center;
+  color: #ffffff;
+  background-color: black;
+  border: transparent;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  z-index: 999999990;
+  border-radius: 3px;
+}
+
+#cssmenu li {
+  display: inline-block;
+  position: relative;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*Top level items
+---------------------------------------*/
+
+#cssmenu > ul > li > span,
+#cssmenu > ul > li > a {
+  font-size: 22px;
+  color: inherit;
+  text-decoration: none;
+  padding: 20px 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  position: relative;
+  transition: all 0.3s;
+}
+#cssmenu li:hover > span,
+#cssmenu li:hover > a {
+  color: black;
+  background-color: #03fc7f;
+}
+
+@keyframes topItemAnimation {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10vh, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+#cssmenu li a {
+  animation: none;
+}
+#cssmenu.active li a {
+  animation: topItemAnimation 0.9s cubic-bezier(0.16, 0.84, 0.44, 1) 0.9s
+    backwards;
+}
+#cssmenu.active li:nth-of-type(1) a {
+  animation: topItemAnimation 0.9s cubic-bezier(0.16, 0.84, 0.44, 1) 0.15s
+    backwards;
+}
+#cssmenu.active li:nth-of-type(2) a {
+  animation: topItemAnimation 0.9s cubic-bezier(0.16, 0.84, 0.44, 1) 0.3s
+    backwards;
+}
+#cssmenu.active li:nth-of-type(3) a {
+  animation: topItemAnimation 0.9s cubic-bezier(0.16, 0.84, 0.44, 1) 0.45s
+    backwards;
+}
+#cssmenu.active li:nth-of-type(4) a {
+  animation: topItemAnimation 0.9s cubic-bezier(0.16, 0.84, 0.44, 1) 0.6s
+    backwards;
+}
+#cssmenu.active li:nth-of-type(5) a {
+  animation: topItemAnimation 0.9s cubic-bezier(0.16, 0.84, 0.44, 1) 0.75s
+    backwards;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  #cssmenu.active li a {
+    animation: none !important;
+  }
+}
+/*--Style the menu-icon--*/
+.menu-icon {
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.menu-icon.active {
+  background-color: transparent;
+}
+
+#mcmenu .hasdd .top-item:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  left: 0;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+#mcmenu .hasdd .top-item:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
 .jumbo-slider {
   background: #1b1b1b;
   height: 100vh;
@@ -110,7 +233,7 @@ body {
   -webkit-transform: translate3d(0, 100px, 0);
   -webkit-transition: transform 0.4s ease-in-out 1s, opacity ease-in-out 1s;
   color: #03fc7f;
-  font-size: 20rem;
+  font-size: 18rem;
   font-weight: 700;
   margin-bottom: 2rem;
   opacity: 0;
@@ -284,18 +407,110 @@ body {
   width: 100%;
 }
 
+/*######## styles for mobile mode */
+
+.menu-icon {
+  display: none;
+}
+
 @media only screen and (max-width: 768px) {
+  .menu-icon {
+    display: inline-block;
+  }
+
+  #cssmenu {
+    width: 100%;
+    max-width: 600px;
+    display: none;
+    background-color: black;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    z-index: 999999990;
+  }
+
+  /*--begin mark1--*/
+
+  #cssmenu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100% !important;
+    right: -130%;
+    left: auto;
+    box-shadow: -4px 0 18px rgba(0, 0, 0, 0.3);
+    transition: all 411ms cubic-bezier(0.7, 0, 1, 0.4);
+  }
+
+  #cssmenu.active {
+    right: 0;
+    transition: all 411ms cubic-bezier(0.16, 0.76, 0.45, 1);
+  }
+
+  #mcmenu {
+    z-index: 1000000004;
+  }
+  -fixed-bg {
+    background: #000;
+    z-index: 1000000000;
+  }
+  -fixed-bg.showing {
+    display: block;
+    opacity: 0;
+  }
+  -fixed-bg.active {
+    opacity: 0.4;
+  }
+  .menu-icon.active {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 1000000006;
+  }
+
+  /*--end mark1--*/
+
+  #cssmenu ul {
+    background-color: transparent;
+    transition: all 411ms ease;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0;
+  }
+
+  #cssmenu .mobileHide {
+    display: none;
+  }
+
+  #cssmenu li {
+    text-align: center;
+    display: block;
+    position: static;
+  }
+
+  #cssmenu > ul > li > span,
+  #cssmenu > ul > li > a {
+    font-size: 32px;
+  }
+  /* #cssmenu li:hover span, #cssmenu li:hover a {
+     
+        color:#FFFFFF;
+        background-color:#651d32;
+    }*/
   .jumbo-slider__description {
-    margin-bottom: 150px;
+    margin-bottom: 250px;
   }
 
   .jumbo-slider__slide-number {
-    font-size: 10rem;
+    font-size: 4rem;
+    margin-top: 15rem;
   }
 
   .jumbo-slider__title {
     background: black;
     color: white;
+    margin-bottom: 5px;
   }
 
   .jumbo-slider__nav {
@@ -305,7 +520,77 @@ body {
   .jumbo-slider__link {
     font-size: 1rem;
   }
+
+  .jumbo-slider__circle {
+    display: none;
+  }
 }
 
+/*----------- menu-icon ----------------*/
+.menu-icon-wrapper {
+  padding: 5px;
+  text-align: right;
+}
+.menu-icon {
+  padding: 9px;
+  cursor: pointer;
+  outline: none;
+  background-color: #000000;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  transition: all 0.25s ease-out;
+  user-select: none;
+  box-sizing: content-box;
+  font-size: 0;
+  position: relative;
+}
+
+.menu-icon.active {
+  background-color: #000000;
+}
+.three-line {
+  width: 22px;
+  height: 20px;
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+}
+.three-line span {
+  background-color: #ffffff;
+  position: absolute;
+  border-radius: 2px;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  transform: rotate(0);
+}
+.three-line span:nth-child(1) {
+  top: 0;
+}
+.three-line span:nth-child(2) {
+  top: 9px;
+  visibility: visible;
+}
+.three-line span:nth-child(3) {
+  bottom: 0;
+}
+.menu-icon.active .three-line span:nth-child(1) {
+  transform: rotate(225deg);
+  top: 9px;
+}
+.menu-icon.active .three-line span:nth-child(2) {
+  transform: rotate(180deg);
+  visibility: hidden;
+}
+.menu-icon.active .three-line span:nth-child(3) {
+  transform: rotate(315deg);
+  top: 9px;
+}
+/*End of styles for mobile mode ########*/
+
 @media only screen and (max-width: 320px) {
+  .menu-icon-wrapper {
+    background-color: #000;
+  }
 }

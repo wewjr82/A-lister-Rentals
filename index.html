@@ -17,10 +17,48 @@
   <body>
     <header class="page-header">
       <div class="page-header__logo"><strong>A-Lister Rentals</strong></div>
-      <nav class="page-header__nav">
-        <a href="#">Vehicle</a>
-        <a href="#">Shopping</a>
-        <a href="#">Inventory</a>
+     
+      <nav class="page-header__nav ">
+        <div id="menuDemo">
+<!--start CssMenu-->
+<div class="menu-icon-wrapper">
+	<div class="menu-icon" onclick="toggleCssMenu(this)">
+		<div class="three-line">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+</div>
+<div id="cssmenu">
+    <ul>
+        <li><a href="#">Vehicle</a></li>
+        <li><a href="#">Shopping</a></li>
+        <li><a href="#">Inventory</a></li>
+        
+    </ul>
+</div>
+<script>
+    function toggleCssMenu(icon) {
+        var cssmenu = document.getElementById('cssmenu');
+        if (icon.className.indexOf('active') == -1) {
+            icon.className = 'menu-icon active';
+			cssmenu.style.display = "block";
+			setTimeout(function(){cssmenu.className = 'active';},0);            
+        }
+        else {
+            icon.className = 'menu-icon';
+			cssmenu.className = '';
+			setTimeout(function(){cssmenu.style.display = "none";},411); 
+        }
+    }
+</script>
+<!--end CssMenu-->
+</div> 
+
+       
+
+       
       </nav>
     </header>
     <main>
