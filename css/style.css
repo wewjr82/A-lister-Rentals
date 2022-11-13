@@ -643,14 +643,20 @@ html {
     margin-top: 2%;
   }
 
+  .jumbo-slider__slide-number{
+    margin-top: 0;
+  }
+
   .jumbo-slider__title {
-    margin-top: 1%;
+    margin-bottom: 1%;
+
     font-size: 1.3rem;
   }
 
   .jumbo-slider__description {
     width: 80%;
     font-size: 0.75rem;
+   
     background-color: rgba(0, 0, 0, 0.737);
   }
 }
