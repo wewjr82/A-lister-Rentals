@@ -13,8 +13,6 @@ html {
   height: 100vh;
 }
 
-
-
 .page-header {
   background: black;
   color: #ffffff;
@@ -514,6 +512,11 @@ html {
   #cssmenu > ul > li > a {
     font-size: 32px;
   }
+  /* #cssmenu li:hover span,
+  #cssmenu li:hover a {
+    color: #000000;
+    background-color: #03fc7f;
+  } */
 }
 
 @media only screen and (max-width: 768px) {
