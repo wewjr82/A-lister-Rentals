@@ -13,11 +13,7 @@ html {
   height: 100vh;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
+
 
 .page-header {
   background: black;
