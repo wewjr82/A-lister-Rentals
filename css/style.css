@@ -13,6 +13,12 @@ html {
   height: 100vh;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .page-header {
   background: black;
   color: #ffffff;
@@ -427,7 +433,8 @@ html {
 
 /* tablet */
 
-@media only screen and (max-width: 980px) {
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   .menu-icon {
     display: inline-block;
   }
@@ -455,6 +462,96 @@ html {
     left: auto;
     box-shadow: -4px 0 18px rgba(0, 0, 0, 0.3);
     transition: all 411ms cubic-bezier(0.7, 0, 1, 0.4);
+    -webkit-transition: all 411ms cubic-bezier(0.7, 0, 1, 0.4);
+    -moz-transition: all 411ms cubic-bezier(0.7, 0, 1, 0.4);
+    -ms-transition: all 411ms cubic-bezier(0.7, 0, 1, 0.4);
+    -o-transition: all 411ms cubic-bezier(0.7, 0, 1, 0.4);
+  }
+
+  #cssmenu.active {
+    right: 0;
+    transition: all 411ms cubic-bezier(0.16, 0.76, 0.45, 1);
+  }
+
+  #mcmenu {
+    z-index: 1000000004;
+  }
+  -fixed-bg {
+    background: #000;
+    z-index: 1000000000;
+  }
+  -fixed-bg.showing {
+    display: block;
+    opacity: 0;
+  }
+  -fixed-bg.active {
+    opacity: 0.4;
+  }
+  .menu-icon.active {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 1000000006;
+  }
+
+  /*--end mark1--*/
+
+  #cssmenu ul {
+    background-color: transparent;
+    transition: all 411ms ease;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0;
+  }
+
+  #cssmenu .mobileHide {
+    display: none;
+  }
+
+  #cssmenu li {
+    text-align: center;
+    display: block;
+    position: static;
+  }
+
+  #cssmenu > ul > li > span,
+  #cssmenu > ul > li > a {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .menu-icon {
+    display: inline-block;
+  }
+
+  #cssmenu {
+    width: 100%;
+    max-width: 600px;
+    display: none;
+    background-color: black;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    z-index: 999999990;
+  }
+
+  /*--begin mark1--*/
+
+  #cssmenu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100% !important;
+    right: -130%;
+    left: auto;
+    box-shadow: -4px 0 18px rgba(0, 0, 0, 0.3);
+    transition: all 411ms cubic-bezier(0.7, 0, 1, 0.4);
+    -webkit-transition: all 411ms cubic-bezier(0.7, 0, 1, 0.4);
+    -moz-transition: all 411ms cubic-bezier(0.7, 0, 1, 0.4);
+    -ms-transition: all 411ms cubic-bezier(0.7, 0, 1, 0.4);
+    -o-transition: all 411ms cubic-bezier(0.7, 0, 1, 0.4);
   }
 
   #cssmenu.active {
@@ -610,7 +707,22 @@ html {
 
 /* smart phone 736  */
 
-@media only screen and (max-width: 736px) {
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  .jumbo-slider__slide-number {
+    margin-bottom: 15px;
+  }
+
+  .jumbo-slider__title {
+    margin-bottom: 10px;
+
+    font-size: 1.3rem;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+
+@media only screen and (max-width: 320px) {
   .menu-icon-wrapper {
     background-color: #000;
   }
