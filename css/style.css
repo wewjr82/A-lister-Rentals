@@ -515,7 +515,7 @@ html {
   
 } */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 980px) {
   .menu-icon {
     display: inline-block;
   }
