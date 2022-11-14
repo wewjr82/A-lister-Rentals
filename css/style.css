@@ -428,7 +428,7 @@ html {
 /* tablet */
 
 /* iPads (landscape) ----------- */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   .menu-icon {
     display: inline-block;
   }
@@ -443,7 +443,7 @@ html {
     z-index: 999999990;
   }
 
-  /*--begin mark1--*/
+  
 
   #cssmenu {
     position: fixed;
@@ -488,7 +488,7 @@ html {
     z-index: 1000000006;
   }
 
-  /*--end mark1--*/
+ 
 
   #cssmenu ul {
     background-color: transparent;
@@ -512,12 +512,8 @@ html {
   #cssmenu > ul > li > a {
     font-size: 32px;
   }
-  /* #cssmenu li:hover span,
-  #cssmenu li:hover a {
-    color: #000000;
-    background-color: #03fc7f;
-  } */
-}
+  
+} */
 
 @media only screen and (max-width: 768px) {
   .menu-icon {
