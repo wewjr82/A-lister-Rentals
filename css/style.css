@@ -162,6 +162,8 @@ html {
   transform: scaleX(1);
 }
 
+/* _____________________ */
+
 .jumbo-slider {
   background: #1b1b1b;
   height: 100vh;
@@ -629,7 +631,7 @@ html {
 
 /* Smartphones (portrait) ----------- */
 
-@media only screen and (max-width: 320px) {
+/* @media only screen and (max-width: 320px) {
   .menu-icon-wrapper {
     background-color: #000;
   }
@@ -655,5 +657,40 @@ html {
     line-height: 1.5;
     background-color: rgba(0, 0, 0, 0.737);
     margin-bottom: 100px;
+  }
+}   */
+
+@media (max-width: 768px) {
+  .menu-icon-wrapper {
+    background-color: #000;
+  }
+
+  .page-header__logo {
+    font-size: 1.6rem;
+    margin-top: 2%;
+  }
+
+  .jumbo-slider__slide-number {
+    margin-top: 0;
+    font-size: 5rem;
+  }
+
+  .jumbo-slider__title {
+    width: 90%;
+    margin-bottom: 0;
+
+    font-size: 1.3rem;
+  }
+
+  .jumbo-slider__description {
+    width: 90%;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    background-color: rgba(0, 0, 0, 0.737);
+    margin-bottom: 10px;
+  }
+
+  .jumbo-slider__link {
+    padding: 10px 15px;
   }
 }
